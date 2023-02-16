@@ -48,3 +48,47 @@
 //     if (num > 2) console.log(arr);
 // }
 // fibSeq(7)
+
+
+
+// let num = 0
+// const towerHanoi = function (descs) {
+//     let fromRod = []
+//     let usingRod = []
+//     let toRod = []
+
+//     for (let i = descs; i > 0; i--) fromRod.push(i)
+//     runHanoi(descs, fromRod, toRod, usingRod)
+//     return num
+// }
+
+// towerHanoi(5)
+
+// function runHanoi(z, A, B, C) {
+//     if (z === 1) {
+//         move(A, B);
+//         num++
+//     } else {
+//         runHanoi(z - 1, A, C, B);
+//         move(A, B)
+//         num++
+//         runHanoi(z - 1, C, B, A)
+//     }
+// }
+
+// function move(A, B) {
+//     B.push(A.pop())
+// }
+
+function countBoomerangs(arr) {
+    let newArr = []
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i - 1] === arr[i + 1] && arr[i] !== arr[i + 1]) {
+            newArr.push([arr[i - 1], arr[i], arr[i + 1]])
+        }
+    }
+
+    return newArr.length
+}
+
+// console.log(countBoomerangs([1, 2, 3, 2, 4, 2, 5, 6, 7, 6, 1, 1, 1]));
