@@ -49,7 +49,7 @@
 // }
 // fibSeq(7)
 
-
+//5
 
 // let num = 0
 // const towerHanoi = function (descs) {
@@ -80,6 +80,8 @@
 //     B.push(A.pop())
 // }
 
+//6
+
 function countBoomerangs(arr) {
     let newArr = []
     for (let i = 0; i < arr.length; i++) {
@@ -92,3 +94,38 @@ function countBoomerangs(arr) {
 }
 
 // console.log(countBoomerangs([1, 2, 3, 2, 4, 2, 5, 6, 7, 6, 1, 1, 1]));
+
+//7
+
+function doesBrickFit(a, b, c, w, h) {
+    if (a === h && b === w) return true
+    else return false
+}
+// console.log(doesBrickFit(2, 1, 2, 2, 2));
+
+
+//8
+
+function textToNumberBinary(str) {
+    let arr = [...str.toLowerCase()].join('').split(' ')
+    let x = ''
+    console.log(arr);
+
+    for (let i = 0; i <= 8; i++) {
+        if (arr[i] === 'zero') {
+            x += 0
+        } else if (arr[i] === 'one') {
+            x += 1
+        }
+    }
+
+    if (x.length < 8) return console.log(x = "");
+    else return console.log(x);
+}
+// textToNumberBinary('one one one one zero zero zero zero')
+// textToNumberBinary('one Zero zero one zero zero one one one one one zero oNe one one zero one zerO')
+// textToNumberBinary('one zero one')
+// textToNumberBinary('one zero zero one zero ten one one one one two')
+// textToNumberBinary('One zero zero one zero one one one zero one one zero zero zero zero one zero one one one zero one one zero zero zero zero one zero one one one zero one one zero zero zero zero one zero one one one zero one one zero zero zero zero one zero one one one zero one one zero zero zero zero one zero')
+// textToNumberBinary('TWO one zero one one zero one zero')
+// textToNumberBinary('TWO one zero one one zero one zero one')
