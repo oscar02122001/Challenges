@@ -129,3 +129,106 @@ function textToNumberBinary(str) {
 // textToNumberBinary('One zero zero one zero one one one zero one one zero zero zero zero one zero one one one zero one one zero zero zero zero one zero one one one zero one one zero zero zero zero one zero one one one zero one one zero zero zero zero one zero one one one zero one one zero zero zero zero one zero')
 // textToNumberBinary('TWO one zero one one zero one zero')
 // textToNumberBinary('TWO one zero one one zero one zero one')
+
+
+// const request = new XMLHttpRequest()
+// request.open('GET', '"https://v3.football.api-sports.io"')
+// request.send()
+
+// request.addEventListener('load', function () {
+//     console.log(this);
+// })
+
+
+
+const swrap = document.querySelector('.slidre-wrap')
+const slider = document.querySelector('.slider')
+const slides = document.querySelectorAll('.slide')
+const next = document.querySelector('.next')
+const prev = document.querySelector('.prev')
+
+
+let curSlide = 0
+let maxSize = slides.length
+
+const goToSlide = function (slide) {
+    slides.forEach((s, i) => s.style.transform = `translateX(${100 *(i-slide)}%)`)
+}
+goToSlide(0)
+next.addEventListener('click', () => {
+    if (curSlide === maxSize - 1) {
+        curSlide = 0
+    } else {
+        curSlide++
+    }
+    goToSlide(curSlide)
+})
+prev.addEventListener('click', () => {
+    if (curSlide === 0) {
+        curSlide = maxSize - 1
+    } else {
+        curSlide--
+    }
+    goToSlide(curSlide)
+})
+
+const getPrefix = function (arr) {
+    if (arr.length === 1) return [];
+    for (let i = 0; i <= arr[0].length; i++) {
+        for (let j = 1; j < arr.length; j++) {
+            if (arr[0][i] !== arr[j][i]) {
+                return arr[0].slice(0, i)
+            }
+        }
+    }
+    return arr[0]
+}
+console.log(getPrefix(["flower", "flowers", "flowers"]))
+// getPrefix(["olima", "oltin", "olis"])
+
+let twoSum = function (arr, target) {
+    let indexNum = []
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] + arr[j] === target && i - j !== 0) {
+                indexNum.push(i)
+            };
+        }
+    }
+    return console.log(indexNum);
+}
+twoSum([3, 3], 6)
+
+
+const addTwoNumbers = function (l1, l2) {
+
+}
+console.log(addTwoNumbers());
+
+
+// const addTwoNumbers = function (l1, l2) {
+//     l1 = [2, 4, 3]
+//     l2 = [5, 6, 4]
+//     let num1 = l1
+//     let num2 = l2
+//     let n1 = +num1.join('')
+//     let n2 = +num2.join('')
+//     let sum = (n1 + n2).toString()
+
+//     let arr = []
+//     for (let i = 0; i < sum.length; i++) {
+//         arr.push(sum[i] * 1);
+//     }
+//     return arr.reverse()
+// }
+// console.log(addTwoNumbers());
+
+
+var isValid = function (s) {
+    console.log(s);
+    let x = ['(', ')', '[', ']', '{', '}'];
+    for (let i = 0; i < x.length; i++) {
+        console.log(x[i] + x[i + 1]);
+    }
+};
+console.log(isValid('({})'));
